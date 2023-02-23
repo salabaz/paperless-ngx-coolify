@@ -67,7 +67,7 @@ services:
       - data:/usr/src/paperless/data
       - media:/usr/src/paperless/media
       - ./export:/usr/src/paperless/export
-      - consume:/usr/src/paperless/consume
+      - syncthing/consume:/usr/src/paperless/consume
     env_file: docker-compose.env
     environment:
       PAPERLESS_REDIS: redis://broker:6379
@@ -99,7 +99,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - consume:/var/syncthing
+      - syncthing:/var/syncthing
     ports:
       - 8384:8384 # Web UI
       - 22000:22000/tcp # TCP file transfers
@@ -112,4 +112,4 @@ volumes:
   media:
   pgdata:
   redisdata:
-  consume:
+  syncthing:
