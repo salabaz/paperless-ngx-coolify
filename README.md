@@ -13,3 +13,9 @@ PAPERLESS_URL
 ~~~
 
 from inside coolify.
+
+Consume directory is
+
+~~~
+/home/paperless/inbox
+~~~
