@@ -50,7 +50,6 @@ services:
 
   webserver:
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
-    #user: "1000"
     restart: unless-stopped
     depends_on:
       - db
@@ -68,7 +67,7 @@ services:
       - data:/usr/src/paperless/data
       - media:/usr/src/paperless/media
       - ./export:/usr/src/paperless/export
-      - /home/philipp/paperless-inbox:/usr/src/paperless/consume
+      - /home/paperless/inbox:/usr/src/paperless/consume
     env_file: docker-compose.env
     environment:
       PAPERLESS_REDIS: redis://broker:6379
