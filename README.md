@@ -14,4 +14,8 @@ from inside coolify.
 
 Set ports and URLs in Coolify (8000 für paperless-ngx, 8384 for syncthing)
 
-Consume directory is /var/syncthing/consume in syncthing.
+Directories in syncthing:
+
+consume: /var/syncthing/consume
+media:  /var/syncthing/media
+export:  /var/syncthing/export
