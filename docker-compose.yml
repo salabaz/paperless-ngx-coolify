@@ -30,7 +30,7 @@
 # For more extensive installation and update instructions, refer to the
 # documentation.
 
-version: "3.4"
+version: "0.1"
 services:
   broker:
     image: docker.io/library/redis:7
@@ -39,7 +39,7 @@ services:
       - redisdata:/data
 
   db:
-    image: docker.io/library/postgres:13
+    image: docker.io/library/postgres:15
     restart: unless-stopped
     volumes:
       - pgdata:/var/lib/postgresql/data
