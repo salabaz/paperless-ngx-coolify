@@ -34,7 +34,7 @@ services:
     volumes:
       - data:/usr/src/paperless/data
       - media:/usr/src/paperless/media
-      - export:/usr/src/paperless/export
+      - /root/backup/paperless:/usr/src/paperless/export
       - consume:/usr/src/paperless/consume
     env_file: docker-compose.env
     environment:
