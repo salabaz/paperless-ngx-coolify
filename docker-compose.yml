@@ -70,7 +70,6 @@ services:
       - syncthing:/var/syncthing
       - consume:/var/syncthing/consume
       - media:/var/syncthing/media
-      - export:/var/syncthing/export
     ports:
       - 8384:8384 # Web UI
       - 22000:22000/tcp # TCP file transfers
