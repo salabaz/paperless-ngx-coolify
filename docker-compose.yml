@@ -34,7 +34,7 @@ services:
     volumes:
       - data:/usr/src/paperless/data
       - media:/usr/src/paperless/media
-      - backup:/usr/src/paperless/backup
+      - export:/usr/src/paperless/export
       - consume:/usr/src/paperless/consume
     env_file: docker-compose.env
     environment:
@@ -84,4 +84,4 @@ volumes:
   redisdata:
   syncthing:
   consume:
-  backup:
+  export:
