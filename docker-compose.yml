@@ -16,7 +16,7 @@ services:
       POSTGRES_USER: paperless
       POSTGRES_PASSWORD: paperless
 
-  webserver2:
+  webserver:
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
     restart: unless-stopped
     depends_on:
@@ -31,17 +31,12 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
-    environment:
-      - "PAPERLESS_REDIS=redis://broker:6379"
-      - "PAPERLESS_DBHOST=db"
-      - "PAPERLESS_TIKA_ENABLED=1"
-      - "PAPERLESS_TIKA_GOTENBERG_ENDPOINT=http://gotenberg:3000"
-      - "PAPERLESS_TIKA_ENDPOINT=http://tika:9998"
     volumes:
       - data:/usr/src/paperless/data
       - media:/usr/src/paperless/media
       - export:/usr/src/paperless/export
       - consume:/usr/src/paperless/consume
+    env_file: docker-compose.env
 
   gotenberg:
     image: docker.io/gotenberg/gotenberg:7.8
